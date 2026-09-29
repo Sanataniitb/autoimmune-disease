@@ -1,0 +1,9 @@
+# Synthetic demo dataset; create it with `autoimmune-ml synthetic`.
+name: synthetic_demo
+display_name: Synthetic demo
+data_path: data/synthetic_demo.csv
+gene_column: Gene
+positive_prefix: "D"
+log_transform: true
+importance_threshold: 0.01
+models: [logreg, svm, random_forest, xgboost]

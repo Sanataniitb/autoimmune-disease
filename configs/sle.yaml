@@ -1,0 +1,11 @@
+# Systemic lupus erythematosus vs healthy controls (original: notebooks/original/SLE.ipynb)
+name: sle
+display_name: Systemic lupus erythematosus
+data_path: "data/GSE116006_SLE_N ml input.csv"
+gene_column: Gene
+positive_prefix: "S"          # disease samples are named SLE1_W0, SLE2_W0, ...
+log_transform: false          # values are already log-scaled
+importance_threshold: 0.003
+always_include: []
+# Samples are named SLE<patient>_W<week>; keep all visits of a patient in one CV fold.
+group_regex: '^(SLE\d+)_'

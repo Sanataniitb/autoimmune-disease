@@ -1,0 +1,11 @@
+# Rheumatoid arthritis vs healthy controls (original: notebooks/original/Arthritis.ipynb)
+name: rheumatoid_arthritis
+display_name: Rheumatoid arthritis
+data_path: "data/Rheumatoid Arthritis ML Input 56 features 106 samples.xlsx"
+gene_column: Gene
+positive_prefix: "C"          # disease samples are named C1-80-BL, C1-76-BL, ...
+log_transform: true           # raw read counts
+importance_threshold: 0.01    # as in the original notebook
+always_include: []
+# Samples are named C<cohort>-<patient>-<visit>; keep all visits of a patient in one CV fold.
+group_regex: '^(C\d+-\d+)-'
