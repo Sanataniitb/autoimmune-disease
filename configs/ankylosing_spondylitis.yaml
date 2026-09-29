@@ -1,0 +1,9 @@
+# Ankylosing spondylitis vs healthy controls (original: notebooks/original/spondylitis.ipynb)
+name: ankylosing_spondylitis
+display_name: Ankylosing spondylitis
+data_path: "data/Spondylitis_ml input_80 features.csv"
+gene_column: Gene
+positive_prefix: "AS"         # disease samples are named AS1, AS2, ...; controls Health_34, ...
+log_transform: true           # raw read counts
+importance_threshold: 0.003
+always_include: []

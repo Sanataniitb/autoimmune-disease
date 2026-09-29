@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - name: End-to-end smoke test on synthetic data
+        run: |
+          autoimmune-ml synthetic --out data/synthetic_demo.csv
+          autoimmune-ml run configs/synthetic_demo.yaml --folds 3 --repeats 1 --models logreg xgboost

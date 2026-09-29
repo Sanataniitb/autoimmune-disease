@@ -1,0 +1,10 @@
+# Type 1 diabetes vs healthy controls (original: notebooks/original/T1D.ipynb)
+name: t1d
+display_name: Type 1 diabetes
+data_path: "data/T1D ML Input manual feature 167.xlsx"
+gene_column: Gene
+positive_prefix: "lib"        # disease samples are named lib1503, lib1582, ...
+log_transform: true           # raw read counts
+importance_threshold: 0.003
+# Established T1D susceptibility genes, always kept as features.
+always_include: [HLA-DQB1, INS, PTPN22, CTLA4, IL2RA, IFIH1, ERBB3, CLEC16A, SUMO4, HLA-DRB1]

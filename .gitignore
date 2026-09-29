@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Notebooks
+.ipynb_checkpoints/
+logs/
+
+# Patient-level expression data and generated outputs are not committed.
+data/*
+!data/README.md
+results/
